@@ -1,0 +1,48 @@
+<?xml version ="1.0" encoding ="UTF-8" ?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+
+    <include file="db.changelog-master.xml"/>
+
+    <changeSet id="test" author="khmelevskoy">
+        <insert tableName="users">
+            <column name="id">1</column>
+            <column name="user_name">Михаил</column>
+            <column name="user_email">mikhail@yandex.ru</column>
+            <column name="user_password">81dc9bdb52d04dc20036dbd8313ed055</column>
+        </insert>
+        <insert tableName="account">
+            <column name="account_name">Альфа-Банк</column>
+            <column name="account_value">1000</column>
+            <column name="user_id">1</column>
+        </insert>
+        <insert tableName="transaction">
+            <column name="id">1</column>
+            <column name="transaction_value">100</column>
+            <column name="to_account_id">1</column>
+            <column name="from_account_id">1</column>
+            <column name="transaction_time">2021-11-19</column>
+        </insert>
+        <insert tableName="category">
+            <column name="id">1</column>
+            <column name="category_name">бытовые траты</column>
+            <column name="category_group">еда</column>
+            <column name="user_id">1</column>
+        </insert>
+        <insert tableName="category_to_transaction">
+            <column name="category_id">1</column>
+            <column name="transaction_id">1</column>
+        </insert>
+        <insert tableName="users_role">
+            <column name="user_id">1</column>
+            <column name="role">USER</column>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

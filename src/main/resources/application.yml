@@ -1,0 +1,22 @@
+spring:
+  liquibase:
+    change-log: db.changelog-master.xml
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 2A5x6Q
+  jpa:
+    show-sql: true
+  freemarker:
+    template-loader-path: classpath:/templates
+    suffix: .ftlh
+
+server:
+  port: 8081
+
+
+
+
+
+
+
